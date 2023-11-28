@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Divider, Input, Button } from 'antd';
 
 function AddFoodForm({ addNewFood }) {
   const [name, setName] = useState('');
@@ -30,41 +31,55 @@ function AddFoodForm({ addNewFood }) {
 
   return (
     <>
-      <h2>Add Food Entry</h2>
+      <Divider>
+        <h2>Add Food Entry</h2>
+      </Divider>
+
       <form onSubmit={handleSumbit}>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={name}
-          onChange={handleName}
-        />
-        <label htmlFor="image">Image</label>
-        <input
-          type="text"
-          name="image"
-          id="image"
-          value={image}
-          onChange={handleImage}
-        />
-        <label htmlFor="calories">Calories</label>
-        <input
-          type="number"
-          name="calories"
-          id="calories"
-          value={calories}
-          onChange={handleCalories}
-        />
-        <label htmlFor="servings">Servings</label>
-        <input
-          type="number"
-          name="servings"
-          id="servings"
-          value={servings}
-          onChange={handleServings}
-        />
-        <button type="submit">Create</button>
+        <div className="form-field">
+          <label htmlFor="name">Name</label>
+          <Input
+            type="text"
+            name="name"
+            id="name"
+            value={name}
+            onChange={handleName}
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="image">Image</label>
+          <Input
+            type="text"
+            name="image"
+            id="image"
+            value={image}
+            onChange={handleImage}
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="calories">Calories</label>
+          <Input
+            type="number"
+            name="calories"
+            id="calories"
+            value={calories}
+            onChange={handleCalories}
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="servings">Servings</label>
+          <Input
+            type="number"
+            name="servings"
+            id="servings"
+            value={servings}
+            onChange={handleServings}
+          />
+        </div>
+
+        <Button type="primary" htmlType="submit">
+          Create
+        </Button>
       </form>
     </>
   );
